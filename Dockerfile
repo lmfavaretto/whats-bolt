@@ -1,6 +1,7 @@
+
 FROM node:18-slim
 
-# Instala bibliotecas necessárias para o Chromium
+# Instalar dependências do sistema
 RUN apt-get update && apt-get install -y \
   wget \
   ca-certificates \
@@ -18,12 +19,15 @@ RUN apt-get update && apt-get install -y \
   libxcomposite1 \
   libxdamage1 \
   libxrandr2 \
+  libgtk-3-0 \
   xdg-utils \
   --no-install-recommends && \
   rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
+
 COPY . .
+
 RUN npm install
-EXPOSE 8080
-CMD ["node", "index.js"]
+
+CMD ["npm", "start"]
