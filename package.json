@@ -2,12 +2,12 @@
 {
   "name": "whatsapp-bolt-mvp",
   "version": "1.0.0",
-  "description": "MVP para envio de mensagens via WhatsApp",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
   },
   "dependencies": {
-    "venom-bot": "^5.0.2"
+    "express": "^4.18.2",
+    "venom-bot": "^5.0.7"
   }
 }
